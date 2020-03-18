@@ -57,14 +57,13 @@ namespace Poker.Services.PokerServices
                         CheckFourOfKind(playerCard, RankDict);
                     }
                     // Straight
-                    if (!IsRoyalFlush && !IsFlush)
-                        CheckStraight(playerCard);
+                    CheckStraight(playerCard);
                 }
                 // high card
                 playerCard.Score = handScore(playerCard);
-                if(playerCard.Score > 40 && playerCard.Type == PokerHandRanks.None)
+                if(playerCard.Score > 40 && playerCard.PokerHand == PokerHandRanks.None)
                 {
-                    playerCard.Type = PokerHandRanks.HighCard;
+                    playerCard.PokerHand = PokerHandRanks.HighCard;
                 }
             }
 
@@ -87,7 +86,7 @@ namespace Poker.Services.PokerServices
                 {
                     Name = playerCard.Name,
                     playerCards = playerCard.playerCards,
-                    Type = playerCard.Type.ToString()
+                    PokerHand = playerCard.PokerHand.ToString()
                 });
                 count++;
             }
@@ -146,7 +145,7 @@ namespace Poker.Services.PokerServices
             if (handScore(playerCard) == (int)PokerHandRanks.RoyalFlush)
             {
                 playerCard.Score = handScore(playerCard);
-                playerCard.Type = PokerHandRanks.RoyalFlush;
+                playerCard.PokerHand = PokerHandRanks.RoyalFlush;
                 return true;
             }
             return false;
@@ -167,15 +166,20 @@ namespace Poker.Services.PokerServices
                     if (diff == 1)
                     {
                         playerCard.Score = handScore(playerCard);
-                        playerCard.Type = PokerHandRanks.StraightFlush;
+                        playerCard.PokerHand = PokerHandRanks.StraightFlush;
                         check = true;
                         return check;
                     }
                     else
                     {
-                        playerCard.Score = handScore(playerCard);
-                        playerCard.Type = PokerHandRanks.Flush;
-                        check = true;
+                        check = CheckStraight(playerCard);
+                        if(!check)
+                        {
+                            playerCard.Score = handScore(playerCard);
+                            playerCard.PokerHand = PokerHandRanks.Flush;
+                            check = true;
+                        }
+                        check = false;
                         break;
                     }
                 }
@@ -189,7 +193,7 @@ namespace Poker.Services.PokerServices
                 if (pair.Value == 4)
                 {
                     playerCard.Score = handScore(playerCard);
-                    playerCard.Type = PokerHandRanks.FourOfAKind;
+                    playerCard.PokerHand = PokerHandRanks.FourOfAKind;
                     return true;
                 }
             }
@@ -200,7 +204,7 @@ namespace Poker.Services.PokerServices
             if (RankDict.ContainsValue(3) && RankDict.ContainsValue(2))
             {
                 playerCard.Score = handScore(playerCard);
-                playerCard.Type = PokerHandRanks.FullHouse;
+                playerCard.PokerHand = PokerHandRanks.FullHouse;
                 return true;
             }
             return false;
@@ -221,7 +225,7 @@ namespace Poker.Services.PokerServices
                     if (diff == 1)
                     {
                         playerCard.Score = handScore(playerCard);
-                        playerCard.Type = PokerHandRanks.Straight;
+                        playerCard.PokerHand = PokerHandRanks.Straight;
                         check = true;
                         return check;
                     }
