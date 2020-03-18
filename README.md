@@ -35,10 +35,6 @@ highest). Suit doesn’t matter.
 
 See also the list of [contributors](https://github.com/Cbasilla/Poker/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 ### Inspiration
 *  [Nick Chapsas](https://github.com/Elfocrash) - [AspNetCoreTutorial](https://github.com/Elfocrash/Youtube.AspNetCoreTutorial)
