@@ -23,6 +23,12 @@ highest). Suit doesn’t matter.
 
   Use [Visual Studio Test Explorer](https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2019) to run all the unit test in the solution.
 
+``Note: When using the restlet client you can use the json files included in the git.
+``
+* [Check Poker When Valid Cards Returns Poker Winner -RoyalFlush, FourOfAKind, FullHouse](https://github.com/Cbasilla/Poker/blob/master/checkPoker_WhenValidCards_ReturnsPokerWinner_RoyalFlush_FourOfAKind_FullHouse.json) , 
+* [Check Poker When Valid Cards Returns Poker Winner -StraightFlush, Flush, Straight](https://github.com/Cbasilla/Poker/blob/master/checkPoker_WhenValidCards_ReturnsPokerWinner_StraightFlush_Flush_Straight.json) , 
+* [Poker Restlet Client Json File](https://github.com/Cbasilla/Poker/blob/master/https://github.com/Cbasilla/Poker/blob/master/Poker.json.json)
+
 ## Built With
 
 * [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/) - The ASP.NET core Web Application used
