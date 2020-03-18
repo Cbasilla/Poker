@@ -27,12 +27,9 @@ highest). Suit doesn’t matter.
 * [Check Poker When Valid Cards Returns Poker Winner -RoyalFlush, FourOfAKind, FullHouse](https://github.com/Cbasilla/Poker/blob/master/checkPoker_WhenValidCards_ReturnsPokerWinner_RoyalFlush_FourOfAKind_FullHouse.json) , 
 * [Check Poker When Valid Cards Returns Poker Winner -StraightFlush, Flush, Straight](https://github.com/Cbasilla/Poker/blob/master/checkPoker_WhenValidCards_ReturnsPokerWinner_StraightFlush_Flush_Straight.json) , 
 * [Poker Restlet Client Json File](https://github.com/Cbasilla/Poker/blob/master/https://github.com/Cbasilla/Poker/blob/master/Poker.json.json)
-* [Restlet Client Screenshot]
-(https://gyazo.com/4cf663f61684640925c32d59211292a5)
-* [Microsoft Screenshot of Unit test]
-(https://gyazo.com/67aef0a96f87d4a0675c47ca2aff76a7)
-* [Swagger UI Screenshot]
-(https://gyazo.com/72d71017db03d5884820758dd1985b80)
+* [Restlet Client Screenshot](https://gyazo.com/4cf663f61684640925c32d59211292a5)
+* [Microsoft Screenshot of Unit test](https://gyazo.com/67aef0a96f87d4a0675c47ca2aff76a7)
+* [Swagger UI Screenshot](https://gyazo.com/72d71017db03d5884820758dd1985b80)
 
 ## Built With
 
