@@ -10,6 +10,6 @@ namespace Poker.Domain
     {
         public string Name { get; set; }
         public string[] playerCards { get; set; }
-        public string Type { get; set; }
+        public string PokerHand { get; set; }
     }
 }

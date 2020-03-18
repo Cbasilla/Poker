@@ -14,7 +14,7 @@ namespace Poker.Domain
         public CardSuits[] playerCardsSuit { get; set; }
 
         public int Score { get; set; }
-        public PokerHandRanks Type { get; set; }
+        public PokerHandRanks PokerHand { get; set; }
         public enum CardRank
         {
             Two = 2,
@@ -74,7 +74,7 @@ namespace Poker.Domain
         public NullCard(PokerHandRanks type, int score)
         {
             this.Score = score;
-            this.Type = type;
+            this.PokerHand = type;
         }
         private static Card instance = new NullCard(PokerHandRanks.None, 0);
 

@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "Name": "Jon",
+      "playerCards": ["6D", "6S", "6H", "3C", "3S"]
+    },
+    {
+      "Name": "Jae",
+      "playerCards": ["9H", "9S", "9C", "9D", "3D"]
+    },
+    {
+      "Name": "Joe",
+      "playerCards": ["AH", "10H", "JH", "QH", "KH"]
+    }
+  ]
+}
