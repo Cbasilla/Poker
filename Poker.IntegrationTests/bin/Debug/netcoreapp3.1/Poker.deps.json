@@ -28,7 +28,8 @@
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Swashbuckle.AspNetCore": "5.1.0",
-          "Swashbuckle.AspNetCore.Swagger": "5.1.0"
+          "Swashbuckle.AspNetCore.Swagger": "5.1.0",
+          "linq2db": "2.9.7"
         },
         "runtime": {
           "Poker.dll": {}
@@ -80,6 +81,22 @@
         },
         "compile": {
           "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
+        }
+      },
+      "linq2db/2.9.7": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.5.0",
+          "System.Data.DataSetExtensions": "4.5.0",
+          "System.Data.SqlClient": "4.6.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/linq2db.dll": {
+            "assemblyVersion": "2.9.7.0",
+            "fileVersion": "2.9.7.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.0/linq2db.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
@@ -160,6 +177,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        }
+      },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.6.0": {
@@ -3411,6 +3439,13 @@
       "path": "fluentvalidation.dependencyinjectionextensions/8.6.2",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512"
     },
+    "linq2db/2.9.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6cAzKCkQkkxTg4WRo7rVFRxT/+9jOryoc3i0K4JzQQ7kAJ8j20KZlMvDnwawUDQsEpVi7jM4RCEvt/KBgPs7aQ==",
+      "path": "linq2db/2.9.7",
+      "hashPath": "linq2db.2.9.7.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3459,6 +3494,13 @@
       "sha512": "sha512-VsWkTpndapj58rQR9H63n5SdiSJkv8zMeoYADvbkmB7kLAuAOBMufnsO/8StYYTH/1i/4y2hdI1Cs93cNnZbzg==",
       "path": "swashbuckle.aspnetcore.swaggerui/5.1.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.5.1.0.nupkg.sha512"
+    },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "path": "system.data.datasetextensions/4.5.0",
+      "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/4.6.0": {
       "type": "package",

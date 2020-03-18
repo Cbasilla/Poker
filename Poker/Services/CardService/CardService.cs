@@ -23,7 +23,7 @@ namespace Poker.Services.CardService
             bool rankExist, suitExist;
             CardRank rankValue;
             CardSuits suitValue;
-            if (char_arr.Length < 3)
+            if (char_arr.Length > 1 && char_arr.Length < 3)
             {
                 rankExist = CheckRank(char_arr[0].ToString());
                 suitExist = CheckSuit(char_arr[1]);
