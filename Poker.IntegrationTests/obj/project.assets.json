@@ -2915,7 +2915,8 @@
         "dependencies": {
           "FluentValidation.AspNetCore": "8.6.2",
           "Swashbuckle.AspNetCore": "5.1.0",
-          "Swashbuckle.AspNetCore.Swagger": "5.1.0"
+          "Swashbuckle.AspNetCore.Swagger": "5.1.0",
+          "linq2db": "2.9.7"
         },
         "compile": {
           "bin/placeholder/Poker.dll": {}

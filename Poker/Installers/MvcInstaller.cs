@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Poker.Services.CardService;
 using Poker.Services.PokerServices;
+using Poker.Utilities.Validators;
 
 namespace Poker.Installers
 {
@@ -15,6 +16,7 @@ namespace Poker.Installers
                 .AddMvc(options =>
                 {
                     options.EnableEndpointRouting = false;
+                    options.Filters.Add(typeof(ValidateModelStateFilter));
                 })
                 .AddFluentValidation(mvcConfiguration => mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>())
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

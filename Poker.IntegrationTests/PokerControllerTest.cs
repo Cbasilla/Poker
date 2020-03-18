@@ -2,6 +2,7 @@ using FluentAssertions;
 using Poker.Contracts.V1;
 using Poker.Contracts.V1.Requests;
 using Poker.Contracts.V1.Responses;
+using Poker.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -110,5 +111,90 @@ namespace Poker.IntegrationTests
                     player.PokerHand.Should().Be(PokerHandRanks.Straight.ToString());
             }
         }
+
+        [Fact]
+        public async Task checkPoker_WhenInvalidCards_ReturnsBadRequest()
+        {
+            // Arrange
+            var data = new List<Domain.PokerData>();
+            String[,] cards = new String[3, 5]
+                {
+                    // B is a not a valid card
+                    { "2B", "7H", "AH", "JH", "4H" },
+                    { "7D", "8D", "9D", "10D", "JD" },
+                    { "3D", "4C", "5D", "6S", "7H" }
+                };
+
+            String[] Names = new string[3] { "Joe", "Jon", "Jae" };
+
+            for (int i = 0; i < 3; i++)
+            {
+                String[] card = new string[5];
+                for (int j = 0; j < 5; j++)
+                {
+                    card[j] = cards[i, j];
+                }
+
+                data.Add(new Domain.PokerData
+                {
+                    Name = Names[i],
+                    playerCards = card,
+                });
+            }
+            // Act
+            var response = await TestClient.PostAsJsonAsync(ApiRoutes.Poker.GetPokerWinner, new PokerRequest
+            {
+                data = data,
+            });
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            var returnedPost = await response.Content.ReadAsAsync<ErrorResponse>();
+            returnedPost.Success.Should().Be(false);
+            returnedPost.ErrorMessages[0].Should().Be("Player's card is not valid.");
+        }
+
+        [Fact]
+        public async Task checkPoker_WhenEmptyName_ReturnsBadRequest()
+        {
+            // Arrange
+            var data = new List<Domain.PokerData>();
+            String[,] cards = new String[3, 5]
+                {
+                    { "6H", "7H", "AH", "JH", "4H" },
+                    { "7D", "8D", "9D", "10D", "JD" },
+                    { "3D", "4C", "5D", "6S", "7H" }
+                };
+                                    //empty name
+            String[] Names = new string[3] { "", "Jon", "Jae" };
+
+            for (int i = 0; i < 3; i++)
+            {
+                String[] card = new string[5];
+                for (int j = 0; j < 5; j++)
+                {
+                    card[j] = cards[i, j];
+                }
+
+                data.Add(new Domain.PokerData
+                {
+                    Name = Names[i],
+                    playerCards = card,
+                });
+            }
+            // Act
+            var response = await TestClient.PostAsJsonAsync(ApiRoutes.Poker.GetPokerWinner, new PokerRequest
+            {
+                data = data,
+            });
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            var returnedPost = await response.Content.ReadAsAsync<ErrorResponse>();
+            returnedPost.Success.Should().Be(false);
+            returnedPost.ErrorMessages[0].Should().Be("The Name field is required.");
+            returnedPost.ErrorMessages[1].Should().Be("The field Name must be a string or array type with a minimum length of '3'.");
+        }
+
     }
 }
